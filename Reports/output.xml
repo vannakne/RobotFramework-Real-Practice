@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0 (Python 3.10.6 on linux)" generated="20221025 20:00:14.652" rpa="false" schemaversion="3">
+<suite id="s1" name="Search" source="/home/vannak/Programs/Robot-Framework/ABA-Exam/Tests/search.robot">
+<test id="s1-t1" name="Search RobotFramework keyword" line="8">
+<kw name="Begin Web Test" library="common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221025 20:00:14.767" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20221025 20:00:14.766" endtime="20221025 20:00:16.001"/>
+</kw>
+<status status="PASS" starttime="20221025 20:00:14.766" endtime="20221025 20:00:16.001"/>
+</kw>
+<kw name="Go to LandingPage" library="landingPage">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${baseUrl}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20221025 20:00:16.002" level="INFO">Opening url 'https://google.com'</msg>
+<status status="PASS" starttime="20221025 20:00:16.002" endtime="20221025 20:00:17.364"/>
+</kw>
+<status status="PASS" starttime="20221025 20:00:16.001" endtime="20221025 20:00:17.364"/>
+</kw>
+<kw name="Input Search Keyword" library="landingPage">
+<arg>robotframework</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${search_box_elmt}</arg>
+<arg>${keyword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221025 20:00:17.365" level="INFO">Typing text 'robotframework' into text field 'xpath:/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input'.</msg>
+<status status="PASS" starttime="20221025 20:00:17.365" endtime="20221025 20:00:17.451"/>
+</kw>
+<status status="PASS" starttime="20221025 20:00:17.364" endtime="20221025 20:00:17.451"/>
+</kw>
+<kw name="Click Search Button" library="landingPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${search_btn_elmt}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221025 20:00:17.452" level="INFO">Clicking button 'xpath:/html/body/div[1]/div[3]/form/div[1]/div[1]/div[4]/center/input[1]'.</msg>
+<status status="PASS" starttime="20221025 20:00:17.452" endtime="20221025 20:00:20.105"/>
+</kw>
+<status status="PASS" starttime="20221025 20:00:17.451" endtime="20221025 20:00:20.105"/>
+</kw>
+<kw name="Verify Search Result Contain Keyword" library="landingPage">
+<arg>robotframework</arg>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${search_result_elmt}</arg>
+<arg>${result_keyword}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20221025 20:00:20.223" level="INFO">Element 'search' contains text 'robotframework'.</msg>
+<status status="PASS" starttime="20221025 20:00:20.106" endtime="20221025 20:00:20.224"/>
+</kw>
+<status status="PASS" starttime="20221025 20:00:20.105" endtime="20221025 20:00:20.224"/>
+</kw>
+<kw name="End Web Test" library="common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221025 20:00:20.224" endtime="20221025 20:00:20.282"/>
+</kw>
+<status status="PASS" starttime="20221025 20:00:20.224" endtime="20221025 20:00:20.282"/>
+</kw>
+<tag>Search</tag>
+<status status="PASS" starttime="20221025 20:00:14.765" endtime="20221025 20:00:20.283"/>
+</test>
+<status status="PASS" starttime="20221025 20:00:14.653" endtime="20221025 20:00:20.283"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Search</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Search">Search</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
